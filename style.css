@@ -6,11 +6,13 @@
 
 body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Montserrat', sans-serif; background: #fff; overflow: hidden; }
 
-.navbar { padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; }
+/* Navbar */
+.navbar { padding: 15px 5%; background: #fff; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000; }
 .brand-sett { font-size: 1.6rem; font-weight: 900; color: var(--black); }
-.brand-co { font-size: 1.2rem; font-weight: 300; }
+.brand-co { font-size: 1.2rem; font-weight: 300; color: var(--black); }
 .brand-sub { font-size: 0.8rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-left: 10px; letter-spacing: 2px; }
 
+/* Capas */
 .page-section { display: none; width: 100%; height: 100vh; overflow-y: auto; background: #fff; text-align: justify; }
 .page-section.active { display: block; }
 
@@ -33,14 +35,14 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Mon
     line-height: 1.6;
 }
 
-/* Botón con borde más grueso (Negrita) */
+/* Botón con borde Azul Grueso */
 .btn-outline-blue-bold { 
     background: transparent; 
-    border: 4px solid var(--blue); /* Borde aumentado */
+    border: 4px solid var(--blue); 
     color: white; 
     padding: 12px 28px; 
     cursor: pointer; 
-    font-weight: 900; /* Texto en negrita pesada */
+    font-weight: 900; 
     margin: 10px;
     transition: 0.4s;
     text-transform: uppercase;
@@ -48,6 +50,7 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Mon
 }
 .btn-outline-blue-bold:hover { background: var(--blue); }
 
+/* Filiales */
 .content-wrapper { padding: 60px 10%; text-align: justify; }
 .header-label-black { color: var(--black); letter-spacing: 3px; font-size: 0.9rem; margin-bottom: 10px; text-align: left; }
 .brand-display { font-family: 'Libre Baskerville', serif; font-size: 3rem; margin: 0; color: var(--black); text-align: left; }
@@ -60,5 +63,7 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Mon
 
 .btn-main { background: var(--black); color: white; padding: 18px 35px; border: none; font-weight: bold; cursor: pointer; text-align: center; }
 .btn-back { background: transparent; border: none; color: #999; cursor: pointer; text-decoration: underline; margin-left: 15px; }
+
+.img-legal { width: 100%; max-width: 400px; margin-top: 20px; border: 1px solid #eee; }
 
 footer { position: fixed; bottom: 10px; width: 100%; text-align: center; font-size: 0.8rem; color: #999; z-index: 5; }
