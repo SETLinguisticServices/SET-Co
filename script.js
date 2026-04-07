@@ -1,44 +1,50 @@
-// Poemas con transición lenta
-const poems = [
-    "I started Early – Took my Dog – And visited the Sea...",
-    "I am the master of my fate, I am the captain of my soul.",
-    "The woods are lovely, dark and deep, But I have promises to keep.",
-    "Hope is the thing with feathers that perches in the soul."
-];
+// Navegación entre secciones
+function showSection(sectionId) {
+    document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+    });
+    document.getElementById(sectionId).classList.add('active');
+    window.scrollTo(0, 0);
+    AOS.refresh();
+}
 
+// Control de Modales
+function openModal(id) { document.getElementById(id).style.display = "block"; }
+function closeModal() { document.querySelectorAll('.modal').forEach(m => m.style.display = "none"); }
+
+// Poemas
+const poems = ["I started Early – Took my Dog...", "I am the master of my fate...", "The woods are lovely, dark and deep..."];
 let currentPoem = 0;
 function rotatePoetry() {
-    const textElement = document.getElementById('poetry-text');
-    if(textElement) {
-        textElement.style.opacity = 0;
-        setTimeout(() => {
-            textElement.textContent = poems[currentPoem];
-            textElement.style.opacity = 1;
-            currentPoem = (currentPoem + 1) % poems.length;
-        }, 2000); // 2 segundos de espera para la difuminación
-    }
+    const el = document.getElementById('poetry-text');
+    if(!el) return;
+    el.style.opacity = 0;
+    setTimeout(() => {
+        el.textContent = poems[currentPoem];
+        el.style.opacity = 1;
+        currentPoem = (currentPoem + 1) % poems.length;
+    }, 2000);
 }
-setInterval(rotatePoetry, 7000); // Se queda 7 segundos cada poema
+setInterval(rotatePoetry, 7000);
 rotatePoetry();
 
-// Formulario corregido para enviar TODO
-document.getElementById('settForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Captura explícita de valores
-    const nombre = document.getElementById('nombre').value;
-    const interes = document.getElementById('interes').value;
-    const modalidad = document.getElementById('modalidad').value;
-    const horario = document.getElementById('horario').value;
-
+// Envío a WhatsApp corregido
+function sendWA(event, type) {
+    event.preventDefault();
     const tel = "522721076629";
-    
-    // Construcción del mensaje con codificación estricta
-    const texto = `Hola *SETT & Co. Linguistic Services*, me gustaría agendar una reunión.%0A%0A` +
-                  `*Prospecto:* ${nombre}%0A` +
-                  `*Interés:* ${interes}%0A` +
-                  `*Modalidad:* ${modalidad}%0A` +
-                  `*Horario propuesto:* ${horario}`;
+    let msg = `Hola *SETT & CO. Linguistic Services*, solicito reunión para *${type}*:%0A%0A`;
 
-    window.open(`https://wa.me/${tel}?text=${texto}`, '_blank');
-});
+    if(type === 'Academy') {
+        const name = document.getElementById('name-ac').value;
+        const mod = document.getElementById('mod-ac').value;
+        const time = document.getElementById('time-ac').value;
+        msg += `*Nombre:* ${name}%0A*Modalidad:* ${mod}%0A*Horario:* ${time}`;
+    } else {
+        const name = document.getElementById('name-tr').value;
+        const date = document.getElementById('date-tr').value;
+        const time = document.getElementById('time-tr').value;
+        msg += `*Nombre/Empresa:* ${name}%0A*Fecha:* ${date}%0A*Hora:* ${time}`;
+    }
+
+    window.open(`https://wa.me/${tel}?text=${msg}`, '_blank');
+}
