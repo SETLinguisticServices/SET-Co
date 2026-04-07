@@ -26,8 +26,8 @@
                 <h1>Soluciones Lingüísticas de Élite</h1>
                 <p class="hero-subtitle">La autoridad académica y legal que tu comunicación requiere.</p>
                 <div class="gateway-buttons">
-                    <button onclick="showSection('academy')" class="btn-outline">SETT & CO. Academy</button>
-                    <button onclick="showSection('translation')" class="btn-outline">Translation Bureau</button>
+                    <button onclick="showSection('academy')" class="btn-outline-blue">Academy</button>
+                    <button onclick="showSection('translation')" class="btn-outline-blue">Translation Bureau</button>
                 </div>
             </div>
         </header>
@@ -35,35 +35,44 @@
 
     <section id="academy" class="page-section">
         <div class="content-wrapper">
-            <div class="header-label-gold">Filial Académica</div>
+            <div class="header-label-black">Filial Académica</div>
             <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
             <h3 class="filial-title">Academy</h3>
             
-            <p class="description">Elevamos tu competencia lingüística bajo el estándar Cambridge, TOEFL, IELTS y EXAVER.</p>
+            <p class="description">Elevamos tu competencia lingüística bajo el estándar Cambridge, TOEFL, IELTS y EXAVER. **Nuestra mayor fortaleza: trasladamos el aula a tu entorno personal o profesional para garantizar un enfoque total.**</p>
             
             <div class="services-grid">
-                <div class="service-box"><h4>Exam Bootcamps</h4><p>Inmersión técnica de 24+ horas.</p></div>
-                <div class="service-box"><h4>Progreso MCER</h4><p>Dominio evolutivo y natural.</p></div>
-                <div class="service-box"><h4>ESP Professional</h4><p>Inglés de nicho especializado.</p></div>
+                <div class="service-box b-blue">
+                    <h4>Exam Bootcamps</h4>
+                    <p>Entrenamiento intensivo de 24+ horas diseñado exclusivamente para candidatos que ya dominan el idioma pero requieren perfeccionar la técnica, tiempos y formatos específicos de certificaciones internacionales.</p>
+                </div>
+                <div class="service-box b-blue">
+                    <h4>Progreso Continuo MCER</h4>
+                    <p>Para quienes buscan adquirir o especializar sus conocimientos sin la presión inmediata de un examen. Creamos un plan de estudio sólido que puede culminar con un bootcamp de certificación a largo plazo.</p>
+                </div>
+                <div class="service-box b-blue">
+                    <h4>ESP Professional</h4>
+                    <p>Inglés para Propósitos Específicos. Vocabulario técnico y situaciones críticas diseñadas para universitarios o profesionales que necesitan dominar el léxico de su área laboral.</p>
+                </div>
             </div>
             
-            <button class="btn-main" onclick="openModal('modal-academy')">Agendar reunión de presentación</button>
+            <button class="btn-main" onclick="sendDirectWA('Academy')">Solicitar reunión de presentación</button>
             <button class="btn-back" onclick="showSection('home')">← Volver</button>
         </div>
     </section>
 
     <section id="translation" class="page-section">
         <div class="content-wrapper">
-            <div class="header-label-gold">Filial Legal</div>
+            <div class="header-label-black">Filial Legal</div>
             <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
             <h3 class="filial-title">Translation Bureau</h3>
             
             <div class="translation-flex">
-                <p class="description">Traducciones con fe pública y rigor técnico con validez internacional.</p>
-                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=500" class="img-legal">
+                <p class="description">Traducciones con fe pública y rigor técnico con validez internacional. Peritaje profesional para documentos legales y académicos.</p>
+                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=500" class="img-legal">
             </div>
             
-            <button class="btn-main" onclick="openModal('modal-translation')">Solicitar reunión técnica</button>
+            <button class="btn-main" onclick="sendDirectWA('Translation Bureau')">Solicitar reunión técnica</button>
             <button class="btn-back" onclick="showSection('home')">← Volver</button>
         </div>
     </section>
@@ -71,32 +80,6 @@
     <footer>
         <p>© 2026 SETT & CO.</p>
     </footer>
-
-    <div id="modal-academy" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3>Reunión Academy</h3>
-            <form onsubmit="sendWA(event, 'Academy')">
-                <input type="text" placeholder="Nombre completo" id="name-ac" required>
-                <select id="mod-ac"><option>Presencial</option><option>Virtual</option></select>
-                <select id="time-ac"><option>16:00 hrs</option><option>17:30 hrs</option><option>19:00 hrs</option><option>20:30 hrs</option></select>
-                <button type="submit" class="btn-wa">Enviar WhatsApp</button>
-            </form>
-        </div>
-    </div>
-
-    <div id="modal-translation" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h3>Agenda Translation</h3>
-            <form onsubmit="sendWA(event, 'Translation')">
-                <input type="text" placeholder="Nombre/Empresa" id="name-tr" required>
-                <input type="date" id="date-tr" required>
-                <input type="time" id="time-tr" required>
-                <button type="submit" class="btn-wa">Confirmar Cita</button>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
