@@ -32,11 +32,13 @@
         </div>
     </header>
 
+    <hr class="section-divider">
+
     <section id="academy" class="section-filial" data-aos="fade-right">
         <div class="content-wrapper">
-            <div class="header-label" style="color: #0E492B;">Filial Académica</div>
-            <h2 class="title-main">SETT & Co. <span class="thin">Academy</span></h2>
-            <p class="description">Elevamos tu competencia lingüística bajo el estándar <strong>Cambridge</strong>, TOEFL, IELTS y EXAVER. <em>No dependemos de cuatro paredes; priorizamos tu entorno.</em></p>
+            <div class="header-label">Filial Académica</div>
+            <h2 class="title-main">SETT & Co. <span class="filial-gold">Academy</span></h2>
+            <p class="description">Elevamos tu competencia lingüística bajo el estándar Cambridge, TOEFL, IELTS y EXAVER. <em>No dependemos de cuatro paredes; priorizamos tu entorno.</em></p>
             
             <div class="services-grid">
                 <div class="service-box b-green">
@@ -52,51 +54,49 @@
                     <p>Vocabulario y competencias críticas diseñadas para tu sector laboral o universitario.</p>
                 </div>
             </div>
-            <a href="#contacto" class="btn-action bg-green">Agendar reunión de presentación</a>
+            <a href="#contacto" class="btn-action bg-black">Agendar reunión de presentación</a>
         </div>
     </section>
 
-    <section id="translation" class="section-filial dark-mode" data-aos="fade-left">
+    <hr class="section-divider">
+
+    <section id="translation" class="section-filial" data-aos="fade-left">
         <div class="content-wrapper">
-            <div class="header-label" style="color: #C65314;">Filial Legal</div>
-            <h2 class="title-main">SETT & Co. <span class="thin">Translation Bureau</span></h2>
+            <div class="header-label">Filial Legal</div>
+            <h2 class="title-main">SETT & Co. <span class="filial-gold">Translation Bureau</span></h2>
             <div class="translation-layout">
                 <p class="description">Traducciones con fe pública y rigor técnico. Especialistas en documentos legales y peritaje con validez internacional.</p>
                 <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400" alt="Legal Translation" class="img-mini">
             </div>
-            <a href="#contacto" class="btn-action bg-orange">Solicitar reunión de servicios</a>
+            <a href="#contacto" class="btn-action bg-black">Solicitar reunión de servicios</a>
         </div>
     </section>
+
+    <hr class="section-divider">
 
     <section id="contacto" class="section-form">
         <div class="glass-card" data-aos="zoom-in">
             <h2>Hablemos de tus metas</h2>
-            <p>Inicia una relación profesional con nosotros.</p>
             <form id="settForm">
-                <input type="text" id="nombre" placeholder="¿Cómo prefieres que te llamemos?" required>
-                
+                <input type="text" id="nombre" placeholder="Nombre completo" required>
                 <div class="row">
-                    <select id="interes" onchange="toggleInputs()">
+                    <select id="interes">
                         <option value="Academy">Interés: Academy</option>
-                        <option value="Translation">Interés: Translation Bureau</option>
+                        <option value="Translation Bureau">Interés: Translation Bureau</option>
                     </select>
                     <select id="modalidad">
                         <option value="Presencial">Modalidad Presencial</option>
                         <option value="Virtual">Modalidad Virtual</option>
                     </select>
                 </div>
-
-                <div id="horarios-container">
-                    <label>Bloques de 1.5hrs (Lunes a Sábado):</label>
-                    <select id="horario">
-                        <option value="16:00">16:00 hrs</option>
-                        <option value="17:30">17:30 hrs</option>
-                        <option value="19:00">19:00 hrs</option>
-                        <option value="20:30">20:30 hrs</option>
-                        <option value="Sábado">Sábado (Mañana/Tarde)</option>
-                    </select>
-                </div>
-
+                <label>Horarios propuestos (Bloques 1.5hrs):</label>
+                <select id="horario">
+                    <option value="16:00">16:00 hrs</option>
+                    <option value="17:30">17:30 hrs</option>
+                    <option value="19:00">19:00 hrs</option>
+                    <option value="20:30">20:30 hrs</option>
+                    <option value="Sabado">Sábado (Bloque flexible)</option>
+                </select>
                 <button type="submit" class="btn-wa">Enviar a WhatsApp Directo</button>
             </form>
         </div>

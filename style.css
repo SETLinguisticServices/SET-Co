@@ -1,51 +1,45 @@
 :root {
+    --gold: #B69121;
     --green: #0E492B;
     --blue: #12274B;
     --orange: #C65314;
-    --dark: #1a1a1a;
-    --white: #ffffff;
+    --black: #000000;
 }
 
-body { font-family: 'Montserrat', sans-serif; margin: 0; color: var(--dark); line-height: 1.6; }
+body { font-family: 'Montserrat', sans-serif; margin: 0; background: #fff; color: var(--black); }
 
-/* Tipografía Imponente */
-.title-main { font-family: 'Libre Baskerville', serif; font-size: 2.5rem; margin-bottom: 1rem; }
-.brand-set { font-size: 1.8rem; font-weight: 900; color: var(--dark); letter-spacing: -1px; }
-.brand-sub { font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; color: var(--blue); font-weight: 600; }
+/* Logo y Colores */
+.brand-set { font-size: 1.8rem; font-weight: 900; color: var(--black); }
+.brand-sub { color: var(--gold) !important; font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; }
+.filial-gold { color: var(--gold); font-weight: 300; }
 
-/* Hero y Poesía */
-.hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80');
-    background-size: cover;
-    display: flex; align-items: center; justify-content: center; color: white; text-align: center;
+/* Navegación */
+.navbar { padding: 20px 5%; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+
+/* Poesía y Hero */
+.hero { height: 100vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80') center/cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; }
+.italic-poetry { 
+    font-family: 'Libre Baskerville', serif; 
+    font-style: italic; 
+    font-size: 1.3rem; 
+    color: var(--gold); /* Color distinguido para poemas */
+    transition: opacity 2s ease-in-out; /* Transición más lenta */
+    min-height: 4rem;
 }
-.italic-poetry { font-family: 'Libre Baskerville', serif; font-style: italic; font-size: 1.2rem; min-height: 3rem; color: #ddd; }
 
-/* Botones con Bordes de Color */
-.btn-outline {
-    padding: 12px 25px; border: 2px solid white; color: white; text-decoration: none; 
-    font-weight: 600; transition: 0.3s; margin: 10px; display: inline-block;
-}
-.border-green:hover { border-color: var(--green); background: var(--green); }
-.border-blue:hover { border-color: var(--blue); background: var(--blue); }
+/* Divisores Negros */
+.section-divider { border: 0; height: 1px; background: var(--black); margin: 0; }
 
-/* Grid de Servicios */
-.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin: 30px 0; }
-.service-box { padding: 20px; border-left: 5px solid; background: #f9f9f9; text-align: left; transition: 0.3s; }
-.service-box:hover { transform: scale(1.02); background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+/* Botones y Secciones */
+.section-filial { padding: 100px 10%; background: white; }
+.btn-action.bg-black { background: var(--black); color: white; text-decoration: none; padding: 15px 30px; font-weight: bold; display: inline-block; transition: 0.3s; }
+.btn-action.bg-black:hover { opacity: 0.8; }
+
+.service-box { padding: 20px; border-left: 5px solid; background: #fafafa; margin-bottom: 10px; }
 .b-green { border-color: var(--green); }
 .b-blue { border-color: var(--blue); }
 .b-orange { border-color: var(--orange); }
 
-/* Utilidades */
-.bg-green { background: var(--green); color: white; }
-.bg-orange { background: var(--orange); color: white; }
-.btn-action { text-decoration: none; padding: 15px 30px; font-weight: bold; display: inline-block; border-radius: 2px; }
-.img-mini { width: 100%; max-width: 300px; margin-top: 20px; border: 1px solid var(--orange); padding: 5px; }
-.dark-mode { background: #111; color: white; }
-
 /* Formulario */
-.glass-card { background: white; padding: 40px; border-top: 5px solid var(--blue); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-.btn-wa { background: var(--dark); color: white; border: none; padding: 18px; width: 100%; font-weight: 900; cursor: pointer; }
-input, select { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #eee; }
+.glass-card { padding: 40px; border-top: 5px solid var(--black); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.btn-wa { background: var(--black); color: white; width: 100%; padding: 20px; border: none; font-weight: 900; cursor: pointer; margin-top: 20px; }
