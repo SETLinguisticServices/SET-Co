@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SET & Co. | Linguistic Services</title>
+    <title>SETT & Co. | Linguistic Services</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo-box">
-            <span class="brand-set">SET <span class="brand-co">& Co.</span></span>
+            <span class="brand-set">SETT <span class="brand-co">& Co.</span></span>
             <span class="brand-sub">Linguistic Services</span>
         </div>
     </nav>
@@ -20,68 +20,83 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-up">
+            <div class="poetry-container">
+                <p id="poetry-text" class="italic-poetry"></p>
+            </div>
             <h1>Soluciones Lingüísticas de Élite</h1>
-            <p>La autoridad académica y legal que tu comunicación global requiere.</p>
+            <p class="hero-subtitle">La autoridad académica y legal que tu comunicación global requiere.</p>
             <div class="gateway-buttons">
-                <a href="#academy" class="btn-outline">SET & Co. Academy</a>
-                <a href="#translation" class="btn-outline">Translation Bureau</a>
+                <a href="#academy" class="btn-outline border-green">SETT & Co. Academy</a>
+                <a href="#translation" class="btn-outline border-blue">Translation Bureau</a>
             </div>
         </div>
     </header>
 
     <section id="academy" class="section-filial" data-aos="fade-right">
         <div class="content-wrapper">
-            <div class="header-label">Filial Académica</div>
-            <h2>SET & Co. <span class="thin">Academy</span></h2>
-            <p class="description">Educación personalizada sin barreras físicas. Llevamos el aula a tu entorno para potenciar tu enfoque total.</p>
+            <div class="header-label" style="color: #0E492B;">Filial Académica</div>
+            <h2 class="title-main">SETT & Co. <span class="thin">Academy</span></h2>
+            <p class="description">Elevamos tu competencia lingüística bajo el estándar <strong>Cambridge</strong>, TOEFL, IELTS y EXAVER. <em>No dependemos de cuatro paredes; priorizamos tu entorno.</em></p>
             
-            <div class="services-minimal">
-                <div class="s-item"><span>01</span> Certificaciones (TOEFL, IELTS, Cambridge)</div>
-                <div class="s-item"><span>02</span> Inglés para Propósitos Específicos (ESP)</div>
-                <div class="s-item"><span>03</span> Regularización bajo marco MCER</div>
+            <div class="services-grid">
+                <div class="service-box b-green">
+                    <h4>Exam Bootcamps</h4>
+                    <p>Inmersión de 24+ horas para expertos que buscan dominar el formato y técnica de examen.</p>
+                </div>
+                <div class="service-box b-blue">
+                    <h4>Progreso Continuo (MCER)</h4>
+                    <p>Dominio evolutivo del idioma sin presión inmediata, con opción a transición a certificación.</p>
+                </div>
+                <div class="service-box b-orange">
+                    <h4>ESP Professional</h4>
+                    <p>Vocabulario y competencias críticas diseñadas para tu sector laboral o universitario.</p>
+                </div>
             </div>
-            <a href="#contacto" class="btn-dark">Agendar Clase Personalizada</a>
+            <a href="#contacto" class="btn-action bg-green">Agendar reunión de presentación</a>
         </div>
     </section>
 
     <section id="translation" class="section-filial dark-mode" data-aos="fade-left">
         <div class="content-wrapper">
-            <div class="header-label">Filial Legal</div>
-            <h2>SET & Co. <span class="thin">Translation Bureau</span></h2>
-            <p class="description">Traducciones legales y peritaje profesional con rigor técnico y validez oficial.</p>
-            <div class="services-minimal">
-                <div class="s-item"><span>01</span> Traducción de Documentos Legales</div>
-                <div class="s-item"><span>02</span> Peritaje Traductor Autorizado</div>
-                <div class="s-item"><span>03</span> Consultoría Lingüística Corporativa</div>
+            <div class="header-label" style="color: #C65314;">Filial Legal</div>
+            <h2 class="title-main">SETT & Co. <span class="thin">Translation Bureau</span></h2>
+            <div class="translation-layout">
+                <p class="description">Traducciones con fe pública y rigor técnico. Especialistas en documentos legales y peritaje con validez internacional.</p>
+                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=400" alt="Legal Translation" class="img-mini">
             </div>
-            <a href="#contacto" class="btn-white">Solicitar Cotización</a>
+            <a href="#contacto" class="btn-action bg-orange">Solicitar reunión de servicios</a>
         </div>
     </section>
 
     <section id="contacto" class="section-form">
         <div class="glass-card" data-aos="zoom-in">
-            <h2>Hablemos de tu proyecto</h2>
-            <form id="waForm">
-                <input type="text" id="nombre" placeholder="Nombre completo" required>
+            <h2>Hablemos de tus metas</h2>
+            <p>Inicia una relación profesional con nosotros.</p>
+            <form id="settForm">
+                <input type="text" id="nombre" placeholder="¿Cómo prefieres que te llamemos?" required>
+                
                 <div class="row">
-                    <select id="filial-interes">
-                        <option value="Academy">Me interesa Academy</option>
-                        <option value="Translation">Me interesa Translation Bureau</option>
+                    <select id="interes" onchange="toggleInputs()">
+                        <option value="Academy">Interés: Academy</option>
+                        <option value="Translation">Interés: Translation Bureau</option>
                     </select>
                     <select id="modalidad">
-                        <option value="Presencial">Presencial (A convenir)</option>
-                        <option value="Virtual">Virtual</option>
+                        <option value="Presencial">Modalidad Presencial</option>
+                        <option value="Virtual">Modalidad Virtual</option>
                     </select>
                 </div>
-                <label>Horarios Disponibles (Bloques de 1.5hrs):</label>
-                <select id="horario">
-                    <option value="16:00">16:00 hrs</option>
-                    <option value="17:30">17:30 hrs</option>
-                    <option value="19:00">19:00 hrs</option>
-                    <option value="20:30">20:30 hrs</option>
-                    <option value="Sábado Mañana">Sábado (Bloque Mañana)</option>
-                    <option value="Sábado Tarde">Sábado (Bloque Tarde)</option>
-                </select>
+
+                <div id="horarios-container">
+                    <label>Bloques de 1.5hrs (Lunes a Sábado):</label>
+                    <select id="horario">
+                        <option value="16:00">16:00 hrs</option>
+                        <option value="17:30">17:30 hrs</option>
+                        <option value="19:00">19:00 hrs</option>
+                        <option value="20:30">20:30 hrs</option>
+                        <option value="Sábado">Sábado (Mañana/Tarde)</option>
+                    </select>
+                </div>
+
                 <button type="submit" class="btn-wa">Enviar a WhatsApp Directo</button>
             </form>
         </div>
