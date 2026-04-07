@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SETT & CO. | Linguistic Services</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo-box" onclick="showSection('home')" style="cursor:pointer">
-            <span class="brand-sett">SETT <span class="brand-co">& CO.</span></span>
-            <span class="brand-sub">Linguistic Services</span>
+        <div class="logo-box" onclick="showSection('home')">
+            <span class="brand-sett">SETT <span class="brand-co">& CO.</span> <span class="brand-sub">Linguistic Services</span></span>
         </div>
     </nav>
 
@@ -21,11 +20,11 @@
         <header class="hero">
             <div class="hero-overlay"></div>
             <div class="hero-content">
-                <div class="poetry-container">
-                    <p id="poetry-text" class="italic-poetry"></p>
+                <div class="poetry-wrapper">
+                    <p id="poetry-text" class="italic-poetry-gold"></p>
                 </div>
                 <h1>Soluciones Lingüísticas de Élite</h1>
-                <p class="hero-subtitle">La autoridad académica y legal que tu comunicación global requiere.</p>
+                <p class="hero-subtitle">La autoridad académica y legal que tu comunicación requiere.</p>
                 <div class="gateway-buttons">
                     <button onclick="showSection('academy')" class="btn-outline">SETT & CO. Academy</button>
                     <button onclick="showSection('translation')" class="btn-outline">Translation Bureau</button>
@@ -36,47 +35,42 @@
 
     <section id="academy" class="page-section">
         <div class="content-wrapper">
-            <div class="header-label">Filial Académica</div>
+            <div class="header-label-gold">Filial Académica</div>
             <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
             <h3 class="filial-title">Academy</h3>
             
-            <p class="description">Elevamos tu competencia lingüística bajo el estándar Cambridge, TOEFL, IELTS y EXAVER. <em>No dependemos de cuatro paredes; priorizamos tu entorno.</em></p>
+            <p class="description">Elevamos tu competencia lingüística bajo el estándar Cambridge, TOEFL, IELTS y EXAVER.</p>
             
             <div class="services-grid">
-                <div class="service-box">
-                    <h4>Exam Bootcamps</h4>
-                    <p>Inmersión de 24+ horas para expertos que buscan dominar el formato y técnica de examen.</p>
-                </div>
-                <div class="service-box">
-                    <h4>Progreso Continuo (MCER)</h4>
-                    <p>Dominio evolutivo del idioma sin presión inmediata, con opción a transición a certificación.</p>
-                </div>
-                <div class="service-box">
-                    <h4>ESP Professional</h4>
-                    <p>Vocabulario y competencias críticas diseñadas para tu sector laboral o universitario.</p>
-                </div>
+                <div class="service-box"><h4>Exam Bootcamps</h4><p>Inmersión técnica de 24+ horas.</p></div>
+                <div class="service-box"><h4>Progreso MCER</h4><p>Dominio evolutivo y natural.</p></div>
+                <div class="service-box"><h4>ESP Professional</h4><p>Inglés de nicho especializado.</p></div>
             </div>
             
             <button class="btn-main" onclick="openModal('modal-academy')">Agendar reunión de presentación</button>
-            <button class="btn-back" onclick="showSection('home')">← Volver al Inicio</button>
+            <button class="btn-back" onclick="showSection('home')">← Volver</button>
         </div>
     </section>
 
     <section id="translation" class="page-section">
         <div class="content-wrapper">
-            <div class="header-label">Filial Legal</div>
+            <div class="header-label-gold">Filial Legal</div>
             <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
             <h3 class="filial-title">Translation Bureau</h3>
             
-            <div class="translation-content">
-                <p class="description">Traducciones con fe pública y rigor técnico. Especialistas en documentos legales y peritaje profesional con validez internacional.</p>
-                <img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=600" class="img-legal">
+            <div class="translation-flex">
+                <p class="description">Traducciones con fe pública y rigor técnico con validez internacional.</p>
+                <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=500" class="img-legal">
             </div>
             
             <button class="btn-main" onclick="openModal('modal-translation')">Solicitar reunión técnica</button>
-            <button class="btn-back" onclick="showSection('home')">← Volver al Inicio</button>
+            <button class="btn-back" onclick="showSection('home')">← Volver</button>
         </div>
     </section>
+
+    <footer>
+        <p>© 2026 SETT & CO.</p>
+    </footer>
 
     <div id="modal-academy" class="modal">
         <div class="modal-content">
@@ -84,13 +78,9 @@
             <h3>Reunión Academy</h3>
             <form onsubmit="sendWA(event, 'Academy')">
                 <input type="text" placeholder="Nombre completo" id="name-ac" required>
-                <select id="mod-ac"><option>Presencial (A convenir)</option><option>Virtual</option></select>
-                <select id="time-ac">
-                    <option value="16:00">16:00 hrs</option><option value="17:30">17:30 hrs</option>
-                    <option value="19:00">19:00 hrs</option><option value="20:30">20:30 hrs</option>
-                    <option value="Sábado">Sábado (Bloque flexible)</option>
-                </select>
-                <button type="submit" class="btn-wa">Enviar Solicitud WhatsApp</button>
+                <select id="mod-ac"><option>Presencial</option><option>Virtual</option></select>
+                <select id="time-ac"><option>16:00 hrs</option><option>17:30 hrs</option><option>19:00 hrs</option><option>20:30 hrs</option></select>
+                <button type="submit" class="btn-wa">Enviar WhatsApp</button>
             </form>
         </div>
     </div>
@@ -98,13 +88,12 @@
     <div id="modal-translation" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <h3>Agenda de Peritaje</h3>
+            <h3>Agenda Translation</h3>
             <form onsubmit="sendWA(event, 'Translation')">
-                <input type="text" placeholder="Nombre o Empresa" id="name-tr" required>
-                <label>Fecha sugerida:</label>
+                <input type="text" placeholder="Nombre/Empresa" id="name-tr" required>
                 <input type="date" id="date-tr" required>
                 <input type="time" id="time-tr" required>
-                <button type="submit" class="btn-wa">Confirmar Cita WhatsApp</button>
+                <button type="submit" class="btn-wa">Confirmar Cita</button>
             </form>
         </div>
     </div>
