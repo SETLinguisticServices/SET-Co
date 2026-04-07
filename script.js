@@ -5,7 +5,6 @@ function showSection(id) {
     if(target) target.classList.add('active');
 }
 
-// Poemas con saltos de línea específicos (\n) para respetar la métrica
 const poems = [
     "I started Early – Took my Dog –\nAnd visited the Sea –\nThe Mermaids in the Basement\nCame out to look at me –",
     "I am the master of my fate,\nI am the captain of my soul.",
@@ -27,7 +26,6 @@ function rotatePoetry() {
 setInterval(rotatePoetry, 8000);
 rotatePoetry();
 
-// Envío directo a WhatsApp sin formulario intermedio
 function sendDirectWA(filial) {
     const tel = "522721076629";
     const msg = `Hola *SETT & CO. Linguistic Services*, me gustaría solicitar una reunión de presentación para la filial: *${filial}*.`;
