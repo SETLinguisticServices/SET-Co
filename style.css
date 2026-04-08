@@ -19,23 +19,28 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Lib
 
 /* Fuentes Unificadas */
 .brand-sett, .brand-co, .brand-display, .filial-title { font-family: 'Libre Baskerville', serif; }
-.brand-sub, .filial-title { font-family: 'Montserrat', sans-serif; }
+.brand-sub, .filial-title, .hero-legend { font-family: 'Montserrat', sans-serif; }
 
 .brand-sett { font-size: 1.4rem; font-weight: 700; color: var(--black); }
-.brand-co { font-size: 1.1rem; font-weight: 400; }
+.brand-co { font-size: 1.1rem; font-weight: 400; color: var(--black); }
 .brand-sub { font-size: 0.7rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-left: 8px; letter-spacing: 1px; }
 
+.nav-buttons { display: flex; align-items: center; }
 .btn-nav-header {
     background: #fff; border: 4px solid var(--blue); color: var(--blue);
     padding: 8px 15px; margin-left: 10px; font-family: 'Montserrat', sans-serif;
     font-weight: 900; cursor: pointer; transition: 0.3s;
 }
 .btn-nav-header:hover { background: var(--blue); color: #fff; }
+.btn-gold-nav { border-color: var(--gold); color: var(--gold); }
+.btn-gold-nav:hover { background: var(--gold); color: #fff; }
 
-/* Transiciones de Capas (.5s In / .5s Out / .5s Total) */
+/* Transiciones de Capas (.5s In / .5s Total) */
 .page-section { 
     display: none; width: 100%; min-height: 100vh; background: #fff; 
     text-align: justify; opacity: 0; transition: opacity 0.5s ease-in-out; 
+    position: relative;
+    padding-bottom: 80px; /* Espacio para el footer */
 }
 .page-section.active { display: block; opacity: 1; }
 
@@ -46,37 +51,80 @@ body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Lib
     display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;
 }
 
-/* Poemas Independientes */
-.poetry-container { height: 200px; display: flex; align-items: center; justify-content: center; width: 80%; }
-.italic-poetry-gold { color: var(--gold); font-size: 1.3rem; font-style: italic; line-height: 1.6; text-align: justify; white-space: pre-line; transition: opacity 0.5s ease-in-out; }
+/* Poemas Independientes y Efecto de Barrido */
+.poetry-container { height: 250px; display: flex; align-items: center; justify-content: center; width: 80%; overflow: hidden; position: relative; }
+.poetry-slide-wrapper { width: 100%; position: relative; }
+
+.italic-poetry-gold { color: var(--gold); font-size: 1.3rem; font-style: italic; line-height: 1.6; text-align: justify; white-space: pre-line; position: relative; }
+
+/* Animación de Barrido (Sweep) */
+.poetry-sweep {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+.poetry-sweep.active-poem {
+    opacity: 1;
+    transform: translateX(0);
+}
+.poetry-sweep.exit-poem {
+    opacity: 0;
+    transform: translateX(100%);
+}
 
 .hero-legend { text-align: center; color: white; margin-top: 20px; }
-.hero-legend h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; margin: 0; font-weight: 700; }
-.hero-legend p { font-family: 'Montserrat', sans-serif; font-size: 1.1rem; margin-top: 10px; }
+.hero-legend h1 { font-size: 2.2rem; margin: 0; font-weight: 700; }
+.hero-legend p { font-size: 1.1rem; margin-top: 10px; }
 
-/* Filiales */
-.content-wrapper { padding: 60px 10% 120px 10%; }
-.header-label-black { font-family: 'Montserrat', sans-serif; color: var(--black); letter-spacing: 3px; font-size: 0.8rem; text-align: left; }
+/* Filiales y Contenido */
+.content-wrapper { padding: 60px 10%; text-align: justify; }
+.header-label-black { font-family: 'Montserrat', sans-serif; color: var(--black); letter-spacing: 3px; font-size: 0.8rem; text-align: left; margin-bottom: 10px; }
 .brand-display { font-size: 3rem; margin: 0; color: var(--black); text-align: left; }
-.filial-title { color: var(--gold); font-weight: 700; font-size: 2.5rem; text-transform: uppercase; margin: 0 0 20px 0; text-align: left; }
+.co-mid { font-size: 2rem; font-weight: 400; color: var(--black); }
+.filial-title { color: var(--gold); font-weight: 700; font-size: 2.5rem; text-transform: uppercase; margin: 0 0 20px 0; text-align: left; letter-spacing: 1px; }
+
+.description { font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px; }
 
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
-.service-box { padding: 25px; background: #fafafa; border-left: 4px solid var(--blue); cursor: pointer; transition: 0.3s; }
+.service-box { padding: 25px; background: #fafafa; border-left: 4px solid var(--blue); cursor: pointer; transition: 0.3s; text-align: justify; }
 .service-box:hover { background: #f0f0f0; }
 .service-link { color: var(--blue); text-decoration: underline; font-family: 'Montserrat', sans-serif; font-weight: 900; }
+.service-box h4 { font-family: 'Montserrat', sans-serif; font-weight: 900; margin-top: 0; }
+.service-box p { font-family: 'Montserrat', sans-serif; font-size: 0.95rem; line-height: 1.6; }
 
-.action-area { margin-top: 40px; }
-.btn-main { background: var(--black); color: white; padding: 15px 30px; border: none; font-weight: bold; cursor: pointer; font-family: 'Montserrat', sans-serif; }
+/* Translation Bureau Específico */
+.translation-grid .service-box { border-left-color: var(--gold); }
+.translation-grid .service-box h4 { color: var(--gold); text-decoration: none; }
+.translation-flex { display: flex; justify-content: center; margin-top: 40px; }
+.img-legal-TB { width: 100%; max-width: 500px; height: auto; border: 1px solid #eee; }
+.TB-action { padding-bottom: 40px; }
+
+/* Profesorado */
+.profesorado-content { max-width: 800px; margin: 0 auto; }
+
+/* Brochure */
+.brochure-layout { display: flex; gap: 40px; align-items: center; margin: 40px 0; }
+.brochure-img { width: 100%; max-width: 300px; height: auto; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.btn-download { display: inline-block; text-decoration: none; }
+
+.action-area { margin-top: 40px; text-align: left; }
+.btn-main { background: var(--black); color: white; padding: 15px 30px; border: none; font-weight: bold; cursor: pointer; font-family: 'Montserrat', sans-serif; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
 .btn-back { background: transparent; border: none; color: #999; cursor: pointer; text-decoration: underline; margin-left: 15px; font-family: 'Montserrat', sans-serif; }
 
-/* Modal de Servicios */
-.modal { display: none; position: fixed; z-index: 2000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); }
-.modal-content { background: #fff; margin: 10% auto; padding: 40px; width: 80%; max-width: 700px; position: relative; border-left: 8px solid var(--blue); }
-.close-modal { position: absolute; right: 20px; top: 10px; font-size: 28px; cursor: pointer; }
-.modal-content h3 { font-family: 'Montserrat', sans-serif; color: var(--blue); font-weight: 900; font-size: 1.8rem; }
-.modal-content p { line-height: 1.8; text-align: justify; font-family: 'Libre Baskerville', serif; }
+/* Overlays (Nueva Ventana de Servicios - Azul #12274B) */
+.service-overlay { 
+    display: none; position: fixed; z-index: 3000; left: 0; top: 0; width: 100%; height: 100%; 
+    background-color: var(--blue); overflow-y: auto; opacity: 0; transition: opacity 0.5s ease;
+}
+.service-overlay.active-overlay { display: block; opacity: 1; }
 
-/* Footer */
+.overlay-content { background: var(--blue); margin: 5% auto; padding: 60px; width: 80%; max-width: 800px; position: relative; color: white; text-align: justify; }
+.close-overlay { position: absolute; right: 30px; top: 20px; font-size: 35px; cursor: pointer; color: var(--gold); }
+.overlay-content h3 { font-family: 'Montserrat', sans-serif; color: var(--gold); font-weight: 900; font-size: 2.2rem; text-transform: uppercase; margin-top: 0; }
+.overlay-content p { line-height: 1.8; font-family: 'Libre Baskerville', serif; font-size: 1.1rem; color: white; }
+.overlay-content strong { color: var(--gold); }
+
+/* Footer Universal */
 footer { background: var(--black); padding: 15px 0; width: 100%; text-align: center; z-index: 5; }
 footer div { color: var(--gold); font-family: 'Montserrat', sans-serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
 
@@ -84,13 +132,35 @@ footer div { color: var(--gold); font-family: 'Montserrat', sans-serif; font-siz
 
 /* Responsive */
 @media (max-width: 768px) {
+    body { overflow-x: hidden; }
     .nav-container { flex-direction: column; gap: 10px; }
+    .nav-buttons { flex-wrap: wrap; justify-content: center; width: 100%; }
+    .btn-nav-header { font-size: 0.7rem; padding: 6px 10px; margin: 3px; }
+
+    .poetry-container { height: 350px; width: 90%; }
+    .italic-poetry-gold { font-size: 1.1rem; }
     .hero-legend h1 { font-size: 1.6rem; }
     .hero-legend p { font-size: 0.9rem; }
+
+    .content-wrapper { padding: 40px 5% 80px 5%; }
+    .brand-display { font-size: 2.2rem; }
+    .filial-title { font-size: 1.8rem; }
+    
+    /* Imagen TB en celular respeta sangrías del texto */
+    .img-legal-TB { width: 100%; max-width: 100%; }
+
+    .brochure-layout { flex-direction: column; gap: 20px; text-align: center; }
+    .action-area { text-align: center; }
+    .btn-main { width: 100%; margin-bottom: 15px; }
+    .btn-back { display: block; width: 100%; text-align: center; margin-left: 0; }
+
+    .overlay-content { width: 90%; margin: 10% auto; padding: 30px; }
+    .overlay-content h3 { font-size: 1.6rem; }
+    .close-overlay { right: 15px; top: 10px; }
+
     .footer-desktop { display: none; }
-    .footer-mobile { display: block; line-height: 1.5; }
-    .modal-content { width: 90%; margin: 20% auto; padding: 20px; }
-    footer { position: relative; }
+    .footer-mobile { display: block; line-height: 1.8; text-align: center; padding: 0 10px; }
+    footer { position: relative; margin-top: 0; }
 }
 
 @media (min-width: 769px) {
