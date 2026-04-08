@@ -1,12 +1,20 @@
-// Navegación de secciones
 function showSection(id) {
     const sections = document.querySelectorAll('.page-section');
-    sections.forEach(s => s.classList.remove('active'));
-    const target = document.getElementById(id);
-    if(target) target.classList.add('active');
+    sections.forEach(s => {
+        s.classList.remove('active');
+        s.style.opacity = "0";
+        setTimeout(() => { s.style.display = 'none'; }, 1500); // Espera la transición
+    });
+    
+    setTimeout(() => {
+        const target = document.getElementById(id);
+        if(target) {
+            target.style.display = 'block';
+            setTimeout(() => { target.classList.add('active'); target.style.opacity = "1"; }, 50);
+        }
+    }, 1500);
 }
 
-// Rotación de Poemas con saltos de línea métricos
 const poems = [
     "I started Early – Took my Dog –\nAnd visited the Sea –\nThe Mermaids in the Basement\nCame out to look at me –",
     "I am the master of my fate,\nI am the captain of my soul.",
@@ -28,9 +36,8 @@ function rotatePoetry() {
 setInterval(rotatePoetry, 8000);
 rotatePoetry();
 
-// Envío directo a WhatsApp
-function sendDirectWA(filial) {
+function sendCustomWA(filial) {
     const tel = "522721076629";
-    const msg = `Hola *SETT & CO. Linguistic Services*, me gustaría solicitar una reunión de presentación para la filial: *${filial}*.`;
+    const msg = `Hola *SETT & CO. Linguistic Services*.\nMe gustaría solicitar una reunión de presentación para la filial *${filial}* el dd/mm/aa a las ________am/pm.\nGracias,\nNombre y apellido de preferencia.`;
     window.open(`https://wa.me/${tel}?text=${encodeURIComponent(msg)}`, '_blank');
 }

@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SETT & CO. | Linguistic Services</title>
-
-    <link rel="shortcut icon" href="favicon.ico?v=1" type="image/x-icon">
     <link rel="icon" href="favicon.ico?v=1" type="image/x-icon">
-
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo-box" onclick="showSection('home')">
-            <span class="brand-sett">SETT <span class="brand-co">& CO.</span> <span class="brand-sub">Linguistic Services</span></span>
+        <div class="nav-container">
+            <div class="logo-box" onclick="showSection('home')">
+                <span class="brand-sett">SETT <span class="brand-co">& CO.</span> <span class="brand-sub">Linguistic Services</span></span>
+            </div>
+            <div class="nav-buttons">
+                <button onclick="showSection('academy')" class="btn-nav-header">ACADEMY</button>
+                <button onclick="showSection('translation')" class="btn-nav-header">TRANSLATION BUREAU</button>
+            </div>
         </div>
     </nav>
 
@@ -26,11 +29,9 @@
                 <div class="poetry-wrapper">
                     <p id="poetry-text" class="italic-poetry-gold"></p>
                 </div>
-                <h1>Soluciones Lingüísticas de Élite</h1>
-                <p class="hero-subtitle">La autoridad académica y legal que tu comunicación requiere.</p>
-                <div class="gateway-buttons">
-                    <button onclick="showSection('academy')" class="btn-outline-blue-bold">Academy</button>
-                    <button onclick="showSection('translation')" class="btn-outline-blue-bold">Translation Bureau</button>
+                <div class="hero-legend">
+                    <h1>Servicios Lingüísticos de Élite</h1>
+                    <p>La autoridad académica y legal que tu comunicación global requiere.</p>
                 </div>
             </div>
         </header>
@@ -42,8 +43,8 @@
             <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
             <h3 class="filial-title">Academy</h3>
             
-            <p class="description">Elevamos tu competencia lingüística bajo el estándar Cambridge, TOEFL, IELTS y EXAVER. <br>
-            Nuestra mayor fortaleza: trasladamos el aula a tu entorno personal o profesional para garantizar un enfoque total.</p>
+            <p class="description">La autoridad académica que tu competencia lingüística requiere. <br>
+            Se traslada el aula a tu entorno personal o profesional para garantizar tu enfoque total.</p>
             
             <div class="services-grid">
                 <div class="service-box b-blue">
@@ -62,7 +63,7 @@
                 </div>
             </div>
             
-            <button class="btn-main" onclick="sendDirectWA('Academy')">Solicitar reunión de presentación</button>
+            <button class="btn-main" onclick="sendCustomWA('Academy')">Solicitar reunión de presentación</button>
             <button class="btn-back" onclick="showSection('home')">← Volver</button>
         </div>
     </section>
@@ -79,13 +80,13 @@
                 <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80&w=500" class="img-legal">
             </div>
             
-            <button class="btn-main" onclick="sendDirectWA('Translation Bureau')">Solicitar reunión técnica</button>
+            <button class="btn-main" onclick="sendCustomWA('Translation Bureau')">Solicitar reunión técnica</button>
             <button class="btn-back" onclick="showSection('home')">← Volver</button>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 SETT & CO.</p>
+        <p>MX | 2026 | Todos los derechos reservados © SETT & CO. LINGUISTIC SERVICES</p>
     </footer>
 
     <script src="script.js"></script>
