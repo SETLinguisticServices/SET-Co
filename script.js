@@ -3,13 +3,14 @@ function showSection(id) {
     sections.forEach(s => {
         s.classList.remove('active');
         s.style.opacity = "0";
-        setTimeout(() => { s.style.display = 'none'; }, 1500); // Espera la transición
+        setTimeout(() => { s.style.display = 'none'; }, 1500);
     });
     
     setTimeout(() => {
         const target = document.getElementById(id);
         if(target) {
             target.style.display = 'block';
+            window.scrollTo(0, 0); // Sube al inicio automáticamente
             setTimeout(() => { target.classList.add('active'); target.style.opacity = "1"; }, 50);
         }
     }, 1500);
