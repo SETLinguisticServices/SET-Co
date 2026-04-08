@@ -18,8 +18,6 @@
             <div class="nav-buttons">
                 <button onclick="showSection('academy')" class="btn-nav-header">ACADEMY</button>
                 <button onclick="showSection('translation')" class="btn-nav-header">TRANSLATION BUREAU</button>
-                <button onclick="showSection('profesorado')" class="btn-nav-header">PROFESORADO</button>
-                <button onclick="showSection('brochure')" class="btn-nav-header btn-gold-nav">RECURSOS</button>
             </div>
         </div>
     </nav>
@@ -46,6 +44,7 @@
             <h3 class="filial-title">Academy</h3>
             <p class="description">La autoridad académica que tu competencia lingüística requiere. <br>
             Se traslada el aula a tu entorno personal o profesional para garantizar tu enfoque total.</p>
+            
             <div class="services-grid">
                 <div class="service-box b-blue" onclick="openFullService('bootcamp')">
                     <h4 class="service-link">Exam Bootcamps</h4>
@@ -60,6 +59,17 @@
                     <p>Inglés especializado para nichos profesionales competitivos.</p>
                 </div>
             </div>
+
+            <hr class="divider">
+
+            <div class="profesorado-content">
+                <div class="header-label-black">Nuestra Autoridad</div>
+                <h3 class="filial-title small-title">Profesorado</h3>
+                <p class="description"><strong>Trayectoria Institucional:</strong> Con un lustro de gestión ininterrumpida, nuestra firma se ha consolidado como el referente en servicios lingüísticos de alta especialidad.</p>
+                <p class="description">Bajo la dirección del <strong>Catedrático Samir Huerta</strong>, cuya trayectoria se ha forjado en las cátedras de las instituciones educativas de mayor prestigio y tradición en la capital del estado, SETT & CO. garantiza un estándar de enseñanza basado en el rigor académico y la investigación lingüística.</p>
+                <p class="description">El claustro docente está integrado por <strong>especialistas</strong> de alto perfil, seleccionados bajo estrictos protocolos de competencia pedagógica y certificaciones internacionales de nivel C2.</p>
+            </div>
+            
             <div class="action-area">
                 <button class="btn-main" onclick="sendCustomWA('Academy')">Solicitar reunión de presentación</button>
                 <button class="btn-back" onclick="showSection('home')">← Volver</button>
@@ -98,42 +108,6 @@
         </div>
     </section>
 
-    <section id="profesorado" class="page-section">
-        <div class="content-wrapper">
-            <div class="header-label-black">Nuestra Autoridad</div>
-            <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
-            <h3 class="filial-title">Profesorado</h3>
-            <div class="profesorado-content">
-                <p class="description"><strong>Trayectoria Institucional:</strong> Con un lustro de gestión ininterrumpida, nuestra firma se ha consolidado como el referente en servicios lingüísticos de alta especialidad.</p>
-                <p class="description">Bajo la dirección del <strong>Catedrático Samir Huerta</strong>, cuya trayectoria se ha forjado en las cátedras de las instituciones educativas de mayor prestigio y tradición en la capital del estado, SETT & CO. garantiza un estándar de enseñanza basado en el rigor académico y la investigación lingüística.</p>
-                <p class="description">El claustro docente está integrado por <strong>especialistas</strong> de alto perfil, seleccionados bajo estrictos protocolos de competencia pedagógica y certificaciones internacionales de nivel C2. Cada miembro de nuestro profesorado posee la facultad de trasladar el rigor del aula académica a los entornos profesionales más exigentes.</p>
-            </div>
-            <div class="action-area">
-                <button class="btn-main" onclick="showSection('home')">Volver al Inicio</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="brochure" class="page-section">
-        <div class="content-wrapper">
-            <div class="header-label-black">Recursos</div>
-            <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
-            <h3 class="filial-title">Brochure de Servicios</h3>
-            <div class="brochure-layout">
-                <div class="brochure-preview">
-                    <img src="https://via.placeholder.com/400x565.png?text=SETT+%26+CO.+Brochure+Sample" alt="Brochure" class="brochure-img">
-                </div>
-                <div class="brochure-info">
-                    <p class="description">Explore a detalle nuestra metodología, rigor y protocolo de actuación en nuestras filiales Académica y Legal.</p>
-                    <a href="sample-brochure.pdf" download="SETT_and_CO_Brochure" class="btn-main btn-download">Descargar Presentación Corporativa (PDF)</a>
-                </div>
-            </div>
-            <div class="action-area">
-                <button class="btn-back" onclick="showSection('home')">← Volver</button>
-            </div>
-        </div>
-    </section>
-
     <div id="bootcamp-overlay" class="service-overlay">
         <div class="overlay-content">
             <span class="close-overlay" onclick="closeFullService()">&times;</span>
@@ -155,8 +129,7 @@
 
     <footer class="main-footer">
         <div class="footer-text">
-            <span class="d-only">MX | 2026 | Todos los derechos reservados © SETT & CO. LINGUISTIC SERVICES</span>
-            <span class="m-only">MX | 2026 | Todos los derechos reservados.<br>© SETT & CO. LINGUISTIC SERVICES</span>
+            MX | 2026 | Todos los derechos reservados © SETT & CO. LINGUISTIC SERVICES
         </div>
     </footer>
 
