@@ -10,14 +10,16 @@
 </head>
 <body>
 
+    <div id="transition-curtain"></div>
+
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo-box" onclick="showSection('home')">
+            <div class="logo-box" onclick="navigate('home')">
                 <span class="brand-sett">SETT <span class="brand-co">& CO.</span> <span class="brand-sub">Linguistic Services</span></span>
             </div>
             <div class="nav-buttons">
-                <button onclick="showSection('academy')" class="btn-nav-header">ACADEMY</button>
-                <button onclick="showSection('translation')" class="btn-nav-header">TRANSLATION BUREAU</button>
+                <button onclick="navigate('academy')" class="btn-nav-header">ACADEMY</button>
+                <button onclick="navigate('translation')" class="btn-nav-header">TRANSLATION BUREAU</button>
             </div>
         </div>
     </nav>
@@ -26,11 +28,9 @@
         <header class="hero">
             <div class="hero-overlay"></div>
             <div class="poetry-container">
-                <div class="poetry-slide-wrapper">
-                    <p id="poetry-text" class="italic-poetry-gold poetry-sweep"></p>
-                </div>
+                <p id="poetry-text" class="italic-poetry-gold"></p>
             </div>
-            <div class="hero-legend">
+            <div class="hero-legend reveal">
                 <h1>Servicios Lingüísticos de Élite</h1>
                 <p>La autoridad académica y legal que tu comunicación global requiere.</p>
             </div>
@@ -39,30 +39,30 @@
 
     <section id="academy" class="page-section">
         <div class="content-wrapper">
-            <div class="header-label-black">Filial Académica</div>
-            <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
-            <h3 class="filial-title">Academy</h3>
-            <p class="description">La autoridad académica que tu competencia lingüística requiere. <br>
+            <div class="header-label-black reveal">Filial Académica</div>
+            <h2 class="brand-display reveal">SETT <span class="co-mid">& CO.</span></h2>
+            <h3 class="filial-title reveal">Academy</h3>
+            <p class="description reveal">La autoridad académica que tu competencia lingüística requiere. <br>
             Se traslada el aula a tu entorno personal o profesional para garantizar tu enfoque total.</p>
             
             <div class="services-grid">
-                <div class="service-box b-blue" onclick="openFullService('bootcamp')">
+                <div class="service-box reveal" onclick="openFullService('bootcamp')">
                     <h4 class="service-link">Exam Bootcamps</h4>
                     <p>Entrenamiento intensivo diseñado para el éxito en certificaciones internacionales.</p>
                 </div>
-                <div class="service-box b-blue" onclick="openFullService('mcer')">
+                <div class="service-box reveal" onclick="openFullService('mcer')">
                     <h4 class="service-link">Progreso Continuo MCER</h4>
                     <p>Dominio evolutivo del idioma bajo estándares europeos.</p>
                 </div>
-                <div class="service-box b-blue" onclick="openFullService('esp')">
+                <div class="service-box reveal" onclick="openFullService('esp')">
                     <h4 class="service-link">ESP Professional</h4>
                     <p>Inglés especializado para nichos profesionales competitivos.</p>
                 </div>
             </div>
 
-            <hr class="divider">
+            <hr class="divider reveal">
 
-            <div class="profesorado-content">
+            <div class="profesorado-content reveal">
                 <div class="header-label-black">Nuestra Autoridad</div>
                 <h3 class="filial-title small-title">Profesorado</h3>
                 <p class="description"><strong>Trayectoria Institucional:</strong> Con un lustro de gestión ininterrumpida, nuestra firma se ha consolidado como el referente en servicios lingüísticos de alta especialidad.</p>
@@ -70,40 +70,40 @@
                 <p class="description">El claustro docente está integrado por <strong>especialistas</strong> de alto perfil, seleccionados bajo estrictos protocolos de competencia pedagógica y certificaciones internacionales de nivel C2.</p>
             </div>
             
-            <div class="action-area">
+            <div class="action-area reveal">
                 <button class="btn-main" onclick="sendCustomWA('Academy')">Solicitar reunión de presentación</button>
-                <button class="btn-back" onclick="showSection('home')">← Volver</button>
+                <button class="btn-back" onclick="navigate('home')">← Volver</button>
             </div>
         </div>
     </section>
 
     <section id="translation" class="page-section">
         <div class="content-wrapper">
-            <div class="header-label-black">Filial Legal</div>
-            <h2 class="brand-display">SETT <span class="co-mid">& CO.</span></h2>
-            <h3 class="filial-title">Translation Bureau</h3>
-            <p class="description">La autoridad traductora que tus documentos requieren. <br>
+            <div class="header-label-black reveal">Filial Legal</div>
+            <h2 class="brand-display reveal">SETT <span class="co-mid">& CO.</span></h2>
+            <h3 class="filial-title reveal">Translation Bureau</h3>
+            <p class="description reveal">La autoridad traductora que tus documentos requieren. <br>
             Rigor técnico y fe pública con validez internacional para el sector corporativo y académico.</p>
             <div class="services-grid translation-grid">
-                <div class="service-box b-gold">
+                <div class="service-box reveal">
                     <h4>Peritaje y Traducción Jurada</h4>
                     <p>Documentos legales, contratos, actas y poderes con certificación oficial para procesos internacionales.</p>
                 </div>
-                <div class="service-box b-gold">
+                <div class="service-box reveal">
                     <h4>Traducción Académica Técnica</h4>
                     <p>Títulos, transcripts, artículos de investigación y tesis con estricta precisión terminológica.</p>
                 </div>
-                <div class="service-box b-gold">
+                <div class="service-box reveal">
                     <h4>Consultoría Terminológica</h4>
                     <p>Aseguramos la consistencia y autoridad de su comunicación corporativa global.</p>
                 </div>
             </div>
-            <div class="translation-flex">
+            <div class="translation-flex reveal">
                 <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=600" class="img-legal-TB">
             </div>
-            <div class="action-area TB-action">
+            <div class="action-area TB-action reveal">
                 <button class="btn-main" onclick="sendCustomWA('Translation Bureau')">Solicitar reunión técnica</button>
-                <button class="btn-back" onclick="showSection('home')">← Volver</button>
+                <button class="btn-back" onclick="navigate('home')">← Volver</button>
             </div>
         </div>
     </section>
