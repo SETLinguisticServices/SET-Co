@@ -4,86 +4,94 @@
     --black: #000000;
 }
 
+/* 5. Cursor "S" Personalizado */
+.custom-s-pointer, 
+.custom-s-pointer * {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' style='font-size:24px'><text y='20' font-family='Montserrat' font-weight='900' fill='%23B69121'>S</text></svg>"), auto !important;
+}
+
 body, html { margin: 0; padding: 0; width: 100%; height: 100%; font-family: 'Libre Baskerville', serif; background: #fff; overflow-x: hidden; }
 
-/* Transición de Líquido (Cortina) */
+/* 4. Transición de Libro (Izquierda a Derecha) */
 #transition-curtain {
     position: fixed; top: 0; left: -100%; width: 100%; height: 100%;
-    background: var(--blue); z-index: 5000; transition: left 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    background: var(--blue); z-index: 9999; transform-origin: left;
+    transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
-#transition-curtain.active { left: 0; }
-#transition-curtain.exit { left: 100%; }
+#transition-curtain.active { transform: translateX(100%); left: 0; }
 
 /* Navbar */
 .navbar { padding: 10px 5%; background: #fff; border-bottom: 4px solid var(--blue); position: sticky; top: 0; z-index: 1000; }
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
-.brand-sett { font-size: 1.4rem; font-weight: 700; color: var(--black); cursor: pointer; }
+.brand-sett { font-size: 1.4rem; font-weight: 700; color: var(--black); }
 .brand-sub { font-family: 'Montserrat', sans-serif; font-size: 0.7rem; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-left: 8px; letter-spacing: 1px; }
 
-.nav-buttons { display: flex; align-items: center; }
 .btn-nav-header {
     background: #fff; border: 4px solid var(--blue); color: var(--blue);
     padding: 8px 15px; margin-left: 10px; font-family: 'Montserrat', sans-serif;
-    font-weight: 900; cursor: pointer; transition: 0.4s; font-size: 0.75rem;
+    font-weight: 900; transition: 0.3s; font-size: 0.75rem;
 }
-.btn-nav-header:hover { background: var(--blue); color: #fff; transform: translateY(-2px); }
+.btn-nav-header:hover { background: var(--blue); color: #fff; }
 
-/* Secciones y Hero */
-.page-section { display: none; width: 100%; min-height: 100vh; background: #fff; position: relative; opacity: 1; }
+/* 1. Visibilidad y 2. Hero Legend Arriba */
+.page-section { display: none; width: 100%; min-height: 100vh; background: #fff; }
 .page-section.active { display: block; }
 
 .hero { 
     height: calc(100vh - 65px); 
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80') center/cover; 
-    display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&q=80') center/cover; 
+    display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
 }
 
-/* Poemas: Escritura Mecánica */
-.poetry-container { height: 250px; display: flex; align-items: center; justify-content: center; width: 80%; }
-.italic-poetry-gold {
-    color: var(--gold); font-size: 1.35rem; font-style: italic; line-height: 1.6; 
-    white-space: pre-line; text-align: center; font-family: 'Libre Baskerville', serif;
-}
+.hero-legend { margin-bottom: 40px; z-index: 2; }
+.hero-legend h1 { color: white !important; font-size: 2.5rem; margin: 0; font-family: 'Montserrat', sans-serif; font-weight: 900; }
+.hero-legend p { color: white !important; font-size: 1.2rem; margin-top: 10px; }
 
-/* Animación de Revelación Scroll */
-.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
+/* Poemas */
+.poetry-container { height: 200px; display: flex; align-items: center; justify-content: center; width: 80%; }
+.italic-poetry-gold { color: var(--gold); font-size: 1.3rem; font-style: italic; line-height: 1.6; white-space: pre-line; }
 
 /* Contenido */
 .content-wrapper { padding: 60px 10% 120px 10%; }
-.filial-title { color: var(--gold); font-weight: 700; font-size: 2.5rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+.filial-title { color: var(--gold); font-weight: 700; font-size: 2.5rem; text-transform: uppercase; font-family: 'Montserrat', sans-serif; margin-bottom: 20px; }
+.description { font-size: 1.1rem; line-height: 1.8; color: var(--black); }
 
-/* Micro-interacciones Services */
-.service-box { 
-    padding: 25px; background: #fafafa; border-left: 4px solid var(--blue); 
-    cursor: pointer; transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-}
-.service-box:hover { 
-    background: #fff; transform: translateY(-5px); 
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05), 0 0 0 1px rgba(182,145,33,0.2); 
-}
+/* Grid de Servicios con Hover */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 30px 0; }
+.service-box { padding: 25px; background: #fafafa; border-left: 4px solid var(--blue); transition: 0.4s; }
+.service-box:hover { transform: translateY(-5px); background: #fff; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.service-link { color: var(--blue); text-decoration: underline; font-family: 'Montserrat', sans-serif; font-weight: 900; }
 
-/* Botones Principales */
-.btn-main { 
-    background: var(--black) !important; color: white !important; padding: 15px 30px; 
-    border: none; font-weight: 900; cursor: pointer; font-family: 'Montserrat', sans-serif; 
-    text-transform: uppercase; font-size: 0.9rem; transition: 0.3s;
-}
-.btn-main:hover { background: var(--gold) !important; transform: scale(1.05); }
-
-/* Overlays */
+/* 3.3 y 3.4 Overlays Corregidos */
 .service-overlay { 
-    display: none; position: fixed; z-index: 6000; left: 0; top: 0; width: 100%; height: 100%; 
-    background-color: var(--blue); opacity: 0; transition: opacity 0.4s ease;
+    display: none; position: fixed; z-index: 9000; left: 0; top: 0; width: 100%; height: 100%; 
+    background-color: var(--blue); overflow-y: auto; padding: 60px 0;
 }
-.service-overlay.active-overlay { display: block; opacity: 1; }
-.overlay-content h3 { color: var(--gold); font-weight: 900; font-size: 2.2rem; margin-top: 0; }
+.overlay-content { width: 80%; max-width: 800px; margin: 0 auto; color: white !important; }
+.overlay-content h3 { color: var(--gold) !important; font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.2rem; }
+.overlay-content p, .overlay-content li { color: white !important; font-size: 1.1rem; line-height: 1.8; }
 
-/* Footer */
-footer { background: var(--black); padding: 15px 0; width: 100%; text-align: center; position: fixed; bottom: 0; z-index: 5; }
+.close-overlay { 
+    position: fixed; right: 40px; top: 20px; font-size: 50px; 
+    color: var(--gold); font-weight: bold; z-index: 9001;
+}
+
+/* Botones */
+.btn-main { 
+    background: var(--black); color: white; padding: 18px 35px; border: none; 
+    font-weight: 900; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 0.9rem;
+}
+.btn-main:hover { background: var(--gold); }
+
+/* 6. Footer Móvil */
+footer { background: var(--black); padding: 15px 0; width: 100%; text-align: center; position: fixed; bottom: 0; }
 .footer-text { color: var(--gold); font-family: 'Montserrat', sans-serif; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; }
+.m-footer { display: none; }
 
 @media (max-width: 768px) {
-    footer { position: relative; }
-    .hero { height: calc(100vh - 120px); }
+    footer { position: relative; padding: 20px 0; }
+    .d-footer { display: none; }
+    .m-footer { display: block; line-height: 1.6; }
+    .hero-legend h1 { font-size: 1.8rem; }
+    .content-wrapper { padding: 40px 5%; }
 }
